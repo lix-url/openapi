@@ -1,0 +1,18 @@
+links:
+
+  get:
+    summary: Get links
+
+  post:
+    summary: Create link
+
+linkById:
+
+  get:
+    summary: Get link
+
+  patch:
+    summary: Update link
+
+  delete:
+    summary: Delete link

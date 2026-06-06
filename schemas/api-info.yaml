@@ -1,0 +1,12 @@
+type: object
+
+properties:
+  client_id:
+    type: integer
+    example: 10992
+  request_version:
+    type: string
+    example: "1.0"
+  last_version:
+    type: string
+    example: "1.0"

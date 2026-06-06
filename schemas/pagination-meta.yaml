@@ -1,0 +1,27 @@
+type: object
+
+properties:
+
+  total:
+    type: integer
+
+    description: Total number of available items matching the current filters.
+
+    example: 2
+
+  limit:
+    type: integer
+
+    description: Maximum number of items returned in the current response.
+
+    example: 1
+
+  next_url:
+    type: string
+    nullable: true
+
+    description: |
+      URL for retrieving the next page of results.
+      Returns null when there are no more items available.
+
+    example: https://lix.li/api/1.0/groups?from_id=1007&limit=1

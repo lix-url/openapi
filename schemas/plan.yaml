@@ -1,0 +1,35 @@
+type: object
+
+properties:
+
+  id:
+    type: integer
+
+    description: Subscription plan ID.
+
+    example: 2
+
+  name:
+    type: string
+
+    description: Subscription plan name.
+
+    example: Pro
+
+  start_datetime:
+    type: string
+    format: date-time
+    nullable: true
+
+    description: |
+      Subscription start datetime in ISO 8601 format.
+      Returns null if the subscription has no start date.
+
+  end_datetime:
+    type: string
+    format: date-time
+    nullable: true
+
+    description: |
+      Subscription expiration datetime in ISO 8601 format.
+      Returns null for lifetime or unlimited plans.

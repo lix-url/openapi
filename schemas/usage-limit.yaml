@@ -1,0 +1,30 @@
+type: object
+
+properties:
+
+  limit:
+    type: integer
+    nullable: true
+
+    description: |
+      Maximum allowed number of items or requests.
+      Returns null for unlimited plans.
+
+    example: 500
+
+  used:
+    type: integer
+
+    description: Number of items or requests already used.
+
+    example: 0
+
+  remaining:
+    type: integer
+    nullable: true
+
+    description: |
+      Remaining available items or requests.
+      Returns null for unlimited plans.
+
+    example: 500

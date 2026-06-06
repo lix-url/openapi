@@ -1,0 +1,19 @@
+root:
+
+  get:
+
+    tags:
+      - System
+    summary: API information
+    description: Returns information about the current API version and authenticated client.
+    responses:
+      '200':
+        description: API information
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/api-info.yaml'
+      '401':
+        description: Unauthorized
+      '429':
+        description: Too many requests

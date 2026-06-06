@@ -1,0 +1,80 @@
+type: object
+
+required:
+  - url
+
+properties:
+
+  group_id:
+    type: integer
+    nullable: true
+    description: ID of the group the link belongs to.
+    example: 1005
+
+  url:
+    type: string
+    format: uri
+    description: Destination URL that will open after redirect.
+    example: https://example.com
+
+  alias:
+    type: string
+    nullable: true
+    description: Custom short link alias. If not specified, it will be generated automatically.
+    example: a2Ag4
+
+  password:
+    type: string
+    nullable: true
+    description: Password required before redirecting to the destination URL.
+
+  title:
+    type: string
+    nullable: true
+    description: Custom title for the short link.
+    example: Promo
+
+  tags:
+    type: array
+
+    description: List of tags assigned to the link.
+
+    items:
+      type: string
+
+    example:
+      - promo
+      - sale
+
+  is_public:
+    type: boolean
+    description: Defines whether the link is publicly accessible.
+    example: true
+
+  tracking_pixel_ids:
+    type: array
+
+    description: List of tracking pixel IDs attached to the link.
+
+    items:
+      type: integer
+
+  meta:
+    type: object
+
+    description: Custom meta tags used for the redirect page preview and SEO metadata.
+
+    additionalProperties: true
+
+  utm:
+    description: UTM parameters automatically appended to the destination URL.
+    $ref: './utm.yaml'
+
+  active_before_datetime:
+    type: string
+    format: date-time
+    nullable: true
+
+    description: |
+      Link expiration datetime in ISO 8601 format.
+      After this datetime the short link becomes inactive.

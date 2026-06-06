@@ -1,0 +1,40 @@
+type: object
+
+properties:
+
+  id:
+    type: integer
+    example: 1007
+
+  alias:
+    type: string
+    example: sZ8gR
+
+  url:
+    type: string
+    format: uri
+    example: https://lix.li/g/sZ8gR
+
+  name:
+    type: string
+    example: Seller group
+
+  is_rotate:
+    type: boolean
+    example: false
+
+  description:
+    type: string
+    nullable: true
+    example: null
+
+  created_datetime:
+    type: string
+    format: date-time
+    example: 2026-05-21T22:08:37+03:00
+
+  deactivated_datetime:
+    type: string
+    format: date-time
+    nullable: true
+    example: null

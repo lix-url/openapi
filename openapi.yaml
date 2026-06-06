@@ -1,0 +1,62 @@
+openapi: 3.1.0
+
+info:
+  title: Lix.li API
+  version: "1.0"
+servers:
+  - url: https://lix.li/api/1.0
+    description: Production server
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+      description: API key created in the dashboard.
+  schemas:
+    Link:
+      $ref: './schemas/link.yaml'
+    Group:
+      $ref: './schemas/group.yaml'
+    UsageLimit:
+      $ref: './schemas/usage-limit.yaml'
+    LinkCreateRequest:
+      $ref: './schemas/link-create-request.yaml'
+    LinkUpdateRequest:
+      $ref: './schemas/link-update-request.yaml'
+    Utm:
+      $ref: './schemas/utm.yaml'
+    PaginationMeta:
+      $ref: './schemas/pagination-meta.yaml'
+    ClientProfile:
+      $ref: './schemas/client-profile.yaml'
+    UserProfile:
+      $ref: './schemas/user-profile.yaml'
+    Plan:
+      $ref: './schemas/plan.yaml'
+    ApiInfo:
+      $ref: './schemas/api-info.yaml'
+security:
+  - ApiKeyAuth: []
+paths:
+  /links:
+    $ref: './paths/links.yaml#/links'
+  /links/{id}:
+    $ref: './paths/links.yaml#/linkById'
+  /groups:
+    $ref: './paths/groups.yaml#/groups'
+  /groups/{id}:
+    $ref: './paths/groups.yaml#/groupById'
+  /me:
+    $ref: './paths/me.yaml#/me'
+  /:
+    $ref: './paths/system.yaml#/root'
+tags:
+  - name: Links
+    description: Manage short links
+  - name: Groups
+    description: Manage groups of links
+  - name: Profile
+    description: Current authenticated client
+  - name: System
+    description: API system endpoints

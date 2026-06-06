@@ -1,0 +1,60 @@
+type: object
+
+properties:
+
+  id:
+    type: integer
+    example: 79618
+
+  alias:
+    type: string
+    example: a2Ag4
+
+  short_url:
+    type: string
+    format: uri
+    example: https://lix.li/a2Ag4
+
+  url:
+    type: string
+    format: uri
+    example: https://example.com
+
+  is_public:
+    type: boolean
+    example: true
+
+  title:
+    type: string
+    nullable: true
+    example: Promo
+
+  created_datetime:
+    type: string
+    format: date-time
+
+  active_before_datetime:
+    type: string
+    format: date-time
+    nullable: true
+
+  deleted_datetime:
+    type: string
+    format: date-time
+    nullable: true
+
+  group:
+    allOf:
+      - $ref: './group.yaml'
+    nullable: true
+
+  tags:
+    type: array
+
+    items:
+      type: string
+
+  meta:
+    type: object
+
+    additionalProperties: true

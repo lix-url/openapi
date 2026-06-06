@@ -1,0 +1,23 @@
+type: object
+
+properties:
+
+  utm_source:
+    type: string
+    nullable: true
+
+  utm_medium:
+    type: string
+    nullable: true
+
+  utm_campaign:
+    type: string
+    nullable: true
+
+  utm_content:
+    type: string
+    nullable: true
+
+  utm_term:
+    type: string
+    nullable: true
